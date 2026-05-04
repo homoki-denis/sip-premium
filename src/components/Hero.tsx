@@ -54,9 +54,12 @@ function Hero() {
       },
     });
 
-    videoRef.current.onloadedmetadata = () => {
-      tl.to(videoRef.current, {
-        currentTime: videoRef.current.duration,
+    if (!videoRef.current) return;
+    const video = videoRef.current;
+
+    video.onloadedmetadata = () => {
+      tl.to(video, {
+        currentTime: video.duration,
       });
     };
   }, []);
