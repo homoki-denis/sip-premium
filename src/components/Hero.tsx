@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 
 function Hero() {
-  const videoRef = useRef();
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
